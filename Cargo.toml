@@ -1,0 +1,31 @@
+[package]
+name = "spider"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# -- libs
+zion = { path = "../../libs/zion" }
+ai = { path = "../../libs/ai" }
+lib-core = { path = "../../libs/core" }
+# -- async/server
+tracing = "0.1.40"
+tokio = { version = "1", features = ["full", "sync"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+axum = { version = "0.6.20", features = ["headers"] }
+tower-http = { version = "0.4", features = ["fs", "cors", "add-extension"] }
+tower = "0.4.13"
+futures = "0.3.28"
+# -- mongo
+mongodb = "2.7.1"
+bson = { version = "2.7.0", features = ["chrono-0_4", "serde_with-3"] }
+# -- util
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.107"
+chrono = "0.4.31"
+reqwest = "0.11.22"
+log = "0.4.20"
+bytes = "1.5.0"
+anyhow = "1.0.75"
